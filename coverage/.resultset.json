@@ -34,7 +34,15 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/would_you_rather/app/models/option.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/Guest/Desktop/would_you_rather/app/models/question.rb": [
+        1,
         1,
         1,
         null
@@ -88,6 +96,6 @@
         null
       ]
     },
-    "timestamp": 1436813482
+    "timestamp": 1436814141
   }
 }
