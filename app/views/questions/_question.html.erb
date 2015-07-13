@@ -1,15 +1,17 @@
-<div class="row">
-  <div class="col-md-12">
-    <%= render "options.html.erb", object: question %>
-    <div class="col-md-11">
-      <div class="btn-group btn-group-justified" role="group" aria-label="View Edit or Destroy Question">
-        <%= link_to 'View', question, class: "btn btn-default" %>
-        <% if user_signed_in? && (current_user.admin? || question.user == current_user) %>
-          <%= link_to 'Edit', edit_question_path(question), class: "btn btn-default" %>
-          <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"%>
-        <% end %>
+<div id="question_<%= question.id %>">
+  <div class="row">
+    <div class="col-md-12">
+      <%= render "options.html.erb", object: question %>
+      <div class="col-md-11">
+        <div class="btn-group btn-group-justified" role="group" aria-label="View Edit or Destroy Question">
+          <%= link_to 'View', question, class: "btn btn-default" %>
+          <% if user_signed_in? && (current_user.admin? || question.user == current_user) %>
+            <%= link_to 'Edit', edit_question_path(question), class: "btn btn-default" %>
+            <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+  <hr>
 </div>
-<hr>
