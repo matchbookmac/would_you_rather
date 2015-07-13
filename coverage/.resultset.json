@@ -24,6 +24,16 @@
         null,
         null,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        11,
+        12,
+        9,
+        null,
         null
       ],
       "/Users/Guest/Desktop/would_you_rather/app/controllers/users_controller.rb": [
@@ -32,7 +42,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         null,
@@ -87,6 +97,6 @@
         null
       ]
     },
-    "timestamp": 1436810645
+    "timestamp": 1436811225
   }
 }
