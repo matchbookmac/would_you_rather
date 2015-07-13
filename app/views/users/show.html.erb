@@ -10,5 +10,9 @@
   <%= @user.admin %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= content_for :nav do %>
+  <li><%= link_to 'Back', :back %></li>
+<% end %>
+<%= content_for :right_nav do %>
+  <li><%= link_to 'Edit', edit_user_registration_path %></li>
+<% end %>

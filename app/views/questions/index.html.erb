@@ -7,7 +7,7 @@
       <div class="col-md-12">
         <div class="btn-group btn-group-justified" role="group" aria-label="View Edit or Destroy Question">
           <%= link_to 'View', question, class: "btn btn-default" %>
-          <% if user_signed_in? && current_user.admin? %>
+          <% if user_signed_in? && (current_user.admin? || question.user == current_user) %>
             <%= link_to 'Edit', edit_question_path(question), class: "btn btn-default" %>
             <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"%>
           <% end %>
@@ -19,6 +19,8 @@
   <% end %>
 <% end %>
 
-<%= content_for :right_nav do %>
-  <li><%= link_to 'New Question', new_question_path %></li>
+<% if user_signed_in? %>
+  <%= content_for :right_nav do %>
+    <li><%= link_to 'New Question', new_question_path %></li>
+  <% end %>
 <% end %>
