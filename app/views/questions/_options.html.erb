@@ -1,0 +1,12 @@
+<% object.options.each.with_index do |option, index| %>
+  <div class="col-md-6">
+    <div class="panel panel-default col-md-10">
+      <div class="panel-body">
+        <%= option.query %>
+      </div>
+    </div>
+    <% unless index == (object.options.length - 1) %>
+      <span class="pull-right">OR</span>
+    <% end %>
+  </div>
+<% end %>

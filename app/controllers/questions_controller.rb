@@ -37,7 +37,7 @@ class QuestionsController < ApplicationController
     end
 
     if result
-      redirect_to @question, notice: 'Question was successfully created.'
+      redirect_to questions_path, notice: 'Question was successfully created.'
     else
       render :new
     end
