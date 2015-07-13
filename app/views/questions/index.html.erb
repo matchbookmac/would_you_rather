@@ -1,26 +1,15 @@
 <h1 class="page-header text-center">Would you rather?</h1>
 
+<div id="new_question_form" class="col-md-12"></div>
 
-<% @questions.each.with_index do |question, index| %>
-  <div class="col-md-6">
-      <%= render "options.html.erb", object: question %>
-      <div class="col-md-12">
-        <div class="btn-group btn-group-justified" role="group" aria-label="View Edit or Destroy Question">
-          <%= link_to 'View', question, class: "btn btn-default" %>
-          <% if user_signed_in? && (current_user.admin? || question.user == current_user) %>
-            <%= link_to 'Edit', edit_question_path(question), class: "btn btn-default" %>
-            <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"%>
-          <% end %>
-        </div>
-      </div>
-  </div>
-  <% if (index + 1) % 2 == 0 %>
-    <br><br><br><br><br><hr>
+<div id="questions">
+  <% @questions.each.with_index do |question, index| %>
+    <%= render question %>
   <% end %>
-<% end %>
+</div>
 
 <% if user_signed_in? %>
   <%= content_for :right_nav do %>
-    <li><%= link_to 'New Question', new_question_path %></li>
+    <li><%= link_to 'New Question', new_question_path, id: "new_question_link", remote: true %></li>
   <% end %>
 <% end %>

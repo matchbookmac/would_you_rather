@@ -39,9 +39,13 @@ class QuestionsController < ApplicationController
     end
 
     if result
-      redirect_to questions_path, notice: 'Question was successfully created.'
+      flash[:notice] = 'Question was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to questions_path }
+        format.js
+      end
     else
-      render :new
+      render :show
     end
   end
 

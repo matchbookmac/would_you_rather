@@ -3,6 +3,7 @@
     <div class="panel panel-default col-md-10">
       <div class="panel-body">
         <%= option.query %>
+        <%= link_to "", new_vote_path(object), class: "btn btn-default glyphicon glyphicon-ok pull-right" %>
       </div>
     </div>
     <% unless index == (object.options.length - 1) %>
