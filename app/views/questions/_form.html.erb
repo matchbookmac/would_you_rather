@@ -1,8 +1,23 @@
+<!-- layout: :horizontal, label_col: "col-sm-0", control_col: "col-md-5" -->
 <%= bootstrap_form_for(@question) do |f| %>
   <%= render "layouts/errors", object: @question %>
+  <div class="row">
 
-  <%= f.number_field :user_id %>
+    <% @question.options.each.with_index do |option, index| %>
+      <div class="col-md-6 form-inline">
 
+        <%= f.fields_for :options, option do |option_fields| %>
+          <%= option_fields.text_area :query, hide_label: true %>
+          <% if index == 0 %>
+            <%= option_fields.label :query, "OR" %>
+          <% elsif index == (@question.options.length - 1) %>
+            <%= option_fields.label :query, "?" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <br><br>
   <div class="actions">
     <%= f.submit class: "btn btn-default btn-block" %>
   </div>

@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :option do
-    question_id 1
-query "MyString"
+    sequence(:query) { |n| "#{n}asdf" }
   end
-
 end

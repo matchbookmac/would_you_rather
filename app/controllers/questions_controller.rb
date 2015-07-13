@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    (1..2).each { |i| @question.options.build }
   end
 
   # GET /questions/1/edit
@@ -23,7 +24,19 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
 
-    if @question.save
+    @options = []
+    question_params[:options_attributes].each do |option|
+      @options << Option.new(option[1])
+    end
+
+    result = Question.transaction do
+      @options.each do |option|
+        option.question = @question
+      end
+      result = @question.save
+    end
+
+    if result
       redirect_to @question, notice: 'Question was successfully created.'
     else
       render :new
@@ -53,6 +66,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def question_params
-      params.require(:question).permit(:user_id)
+      params.require(:question).permit(:user_id, { options_attributes: [:id , :query] })
     end
 end
