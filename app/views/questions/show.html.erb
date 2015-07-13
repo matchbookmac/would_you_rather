@@ -1,18 +1,18 @@
 <h1 class="page-header text-center">Would you rather?</h1>
 
-<%= render "options.html.erb", object: @question %>
+<div id="question_<%= @question.id %>">
+  <%= render "options.html.erb", object: @question %>
 
-<div class="btn-group btn-group-justified" role="group" aria-label="View Edit or Destroy Question">
-  <% if user_signed_in? && (current_user.admin? || @question.user == current_user) %>
-    <%= link_to 'Edit', edit_question_path(@question), class: "btn btn-default" %>
-    <%= link_to 'Destroy', @question,
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' },
-                          remote: true,
-                          class: "btn btn-default" %>
-  <% end %>
+  <div class="btn-group btn-group-justified" role="group" aria-label="View Edit or Destroy Question">
+    <% if user_signed_in? && (current_user.admin? || @question.user == current_user) %>
+      <%= link_to 'Edit', edit_question_path(@question), class: "btn btn-default" %>
+      <%= link_to 'Destroy', @question,
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' },
+                            class: "btn btn-default" %>
+    <% end %>
+  </div>
 </div>
-
 <%= content_for :nav do %>
   <li><%= link_to 'Back', questions_path %></li>
 <% end %>

@@ -10,6 +10,9 @@
 
 <% if user_signed_in? %>
   <%= content_for :right_nav do %>
-    <li><%= link_to 'New Question', new_question_path, id: "new_question_link", remote: true %></li>
+    <li><%= link_to 'New Question',
+                    new_question_path,
+                    id: "new_question_link",
+                    remote: true %></li>
   <% end %>
 <% end %>
