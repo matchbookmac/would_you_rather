@@ -13,7 +13,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'bootstrap_form'
 gem 'devise'
 gem 'paperclip'
-gem 'rails_12factor'
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'byebug'
