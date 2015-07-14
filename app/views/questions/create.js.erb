@@ -1,3 +1,6 @@
 $("#new_question_form").children().remove();
 $("#new_question_link").show();
 $("#questions").append("<%= j render(@question) %>")
+// $("#notice").text("")
+$("#flash_notice").append("<div class='flash alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='notice'><%= notice %></span></div>")
+window.setTimeout(function() { $(".flash").alert().slideUp(); }, 5000);
