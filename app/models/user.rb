@@ -20,9 +20,9 @@ class User < ActiveRecord::Base
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions.to_hash).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
-    else
-      conditions[:email].downcase! if conditions[:email]
-      where(conditions.to_hash).first
+    # else
+    #   conditions[:email].downcase! if conditions[:email]
+    #   where(conditions.to_hash).first
     end
   end
 end

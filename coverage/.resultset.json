@@ -21,39 +21,17 @@
         1,
         null,
         1,
-        3,
-        3,
-        3,
+        0,
+        0,
+        0,
         null,
-        0,
-        0,
+        null,
+        null,
         null,
         null,
         null
       ],
       "/Users/Guest/Desktop/would_you_rather/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Guest/Desktop/would_you_rather/app/models/option.rb": [
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/Guest/Desktop/would_you_rather/app/models/question.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/Guest/Desktop/would_you_rather/app/models/vote.rb": [
-        1,
-        1,
         1,
         null
       ],
@@ -65,7 +43,7 @@
         null,
         null,
         1,
-        5,
+        4,
         null,
         null,
         null,
@@ -100,6 +78,10 @@
         null,
         2,
         1,
+        1,
+        2,
+        1,
+        null,
         null,
         1,
         null,
@@ -118,6 +100,10 @@
         1,
         0,
         0,
+        0,
+        0,
+        0,
+        null,
         null,
         null,
         1,
@@ -154,13 +140,29 @@
         1,
         null,
         1,
-        17,
-        19,
-        17,
+        1,
+        2,
+        1,
         null,
+        null
+      ],
+      "/Users/Guest/Desktop/would_you_rather/app/models/question.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/would_you_rather/app/models/option.rb": [
+        1,
+        1,
+        null,
+        1,
         null
       ]
     },
-    "timestamp": 1436828317
+    "timestamp": 1436897153
   }
 }

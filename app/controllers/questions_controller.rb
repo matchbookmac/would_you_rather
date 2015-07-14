@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
         format.js
       end
     else
-      render :show
+      render :new
     end
   end
 

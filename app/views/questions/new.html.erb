@@ -2,7 +2,10 @@
   <h1>Would you rather: </h1>
 </div>
 
-<%= render 'form' %>
+<%= bootstrap_form_for @question do |f| %>
+  <%= render 'form_html' %>
+<% end %>
+<br><br>
 
 <%= content_for :nav do %>
   <li><%= link_to 'Back', questions_path %></li>
