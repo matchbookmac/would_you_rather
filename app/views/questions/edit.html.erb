@@ -1,6 +1,9 @@
 <h1>Editing Question</h1>
 
-<%= render 'form' %>
+<%= bootstrap_form_for @question do |f| %>
+  <%= render 'form_html' %>
+<% end %>
+<br><br>
 
 <%= content_for :right_nav do %>
   <li><%= link_to 'Show', @question %></li>
