@@ -11,6 +11,16 @@ describe 'the edit a question path' do
       expect(page).to have_content 'successfully'
     end
 
+    it 'edits a question belonging to another user if the current user is admin' do
+      user = create(:user_with_questions)
+      admin = create(:logged_in_admin)
+      visit edit_question_path(user.questions.first)
+      fill_in "question_options_attributes_0_query", with: attributes_for(:option)[:query]
+      fill_in "question_options_attributes_1_query", with: attributes_for(:option)[:query]
+      click_on "Update Question"
+      expect(page).to have_content 'successfully'
+    end
+
     it 'fails to edit a question if an option is omitted' do
       user = create(:logged_in_user_with_questions)
       visit edit_question_path(user.questions.first)

@@ -25,8 +25,8 @@ describe 'the ask a question path' do
     end
   end
 
-  context 'via the js format' do
-    it 'creates a question with two associated options', js: true do
+  context 'via the js format', js: true do
+    it 'creates a question with two associated options' do
       user = create(:logged_in_user)
       visit questions_path
       click_on 'New Question'
@@ -36,7 +36,7 @@ describe 'the ask a question path' do
       expect(page).to have_content 'successfully'
     end
 
-    it 'fails to create a question if an option is omitted', js: true do
+    it 'fails to create a question if an option is omitted' do
       user = create(:logged_in_user)
       visit questions_path
       click_on 'New Question'

@@ -61,10 +61,9 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   def destroy
     @question.destroy
-    flash[:notice] = 'Question was successfully destroyed.'
     respond_to do |format|
-      format.html { redirect_to questions_url }
-      format.js
+      format.html { redirect_to questions_url, alert: 'Question was successfully destroyed.' }
+      format.js { flash[:alert] = 'Question was successfully destroyed.' }
     end
   end
 
