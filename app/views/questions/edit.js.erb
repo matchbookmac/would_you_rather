@@ -1,0 +1,2 @@
+$("#question_<%= @question.id %>").children().remove();
+$("#question_<%= @question.id %>").append('<%= j render("form_remote") %>');

@@ -52,7 +52,10 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   def update
     if @question.update(question_params)
-      redirect_to @question, notice: 'Question was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to questions_path, notice: 'Question was successfully updated.' }
+        format.js { flash[:notice] = 'Question was successfully updated.' }
+      end
     else
       render :edit
     end
