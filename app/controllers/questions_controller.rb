@@ -6,6 +6,9 @@ class QuestionsController < ApplicationController
   # GET /questions
   def index
     @questions = Question.all
+    @questions.each do |question|
+      question.options.each { |option| option.votes.build }
+    end
   end
 
   # GET /questions/1
@@ -39,7 +42,7 @@ class QuestionsController < ApplicationController
     end
 
     if result
-
+      @question.options.each { |option| option.votes.build }
       respond_to do |format|
         format.html { redirect_to questions_path, notice: 'Question was successfully created.' }
         format.js { flash[:notice] = 'Question was successfully created.' }
